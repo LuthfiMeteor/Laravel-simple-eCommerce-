@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('order', function (Blueprint $table) {
             $table->id();
             $table->string('nama_lengkap');
+            $table->string('user_id');
             $table->string('email');
             $table->string('no_hp');
             $table->string('alamat');
