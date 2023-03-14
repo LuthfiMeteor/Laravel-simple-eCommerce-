@@ -39,6 +39,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::middleware(['auth'])->group(function () {
     route::get('keranjang', [KeranjangController::class, 'lihatkeranjang']);
     route::get('checkout', [CheckoutController::class, 'index']);
+    route::post('place-order', [CheckoutController::class, 'placeorder']);
 });
 
 

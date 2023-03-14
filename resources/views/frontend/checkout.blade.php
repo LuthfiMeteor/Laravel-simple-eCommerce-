@@ -4,6 +4,7 @@
 @endsection
 @section('content')
     <div class="container mt-5">
+        <form action="{{ url('place-order') }}" method="post">
         <div class="row">
             <div class="col-md-7">
                 <div class="card">
@@ -12,11 +13,7 @@
                         <hr>
                         <div class="row form-lanjut">
                             <div class="col-md-6">
-                                <label for="">Nama Awal</label>
-                                <input type="text" class="form-control" placeholder="Masukan Nama Awal">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="">Nama Akhir</label>
+                                <label for="">Nama Lengkap</label>
                                 <input type="text" class="form-control" placeholder="Masukan Nama Awal">
                             </div>
                             <div class="col-md-6 mt-3">
@@ -28,11 +25,7 @@
                                 <input type="text" class="form-control" placeholder="Masukan Nama Awal">
                             </div>
                             <div class="col-md-6 mt-3">
-                                <label for="">Alamat 1</label>
-                                <input type="text" class="form-control" placeholder="Masukan Nama Awal">
-                            </div>
-                            <div class="col-md-6 mt-3">
-                                <label for="">Alamat 2</label>
+                                <label for="">Alamat Lengkap</label>
                                 <input type="text" class="form-control" placeholder="Masukan Nama Awal">
                             </div>
                             <div class="col-md-6 mt-3">
@@ -40,11 +33,7 @@
                                 <input type="text" class="form-control" placeholder="Masukan Nama Awal">
                             </div>
                             <div class="col-md-6 mt-3">
-                                <label for="">State</label>
-                                <input type="text" class="form-control" placeholder="Masukan Nama Awal">
-                            </div>
-                            <div class="col-md-6 mt-3">
-                                <label for="">Country</label>
+                                <label for="">Provinsi</label>
                                 <input type="text" class="form-control" placeholder="Masukan Nama Awal">
                             </div>
                             <div class="col-md-6 mt-3">
@@ -79,10 +68,11 @@
                             </tbody>
                         </table>
                         <hr>
-                        <button class="btn btn-success">Checkout!</button>
+                        <button type="submit" class="btn btn-success">Checkout!</button>
                     </div>
                 </div>
             </div>
         </div>
+        </form>
     </div>
 @endsection

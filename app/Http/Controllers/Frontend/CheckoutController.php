@@ -13,4 +13,8 @@ class CheckoutController extends Controller
         $keranjang= keranjang::where('user_id', Auth::id())->get();
         return view('frontend.checkout', compact('keranjang'));
     }
+    public function placeorder(Request $req)
+    {
+        
+    }
 }

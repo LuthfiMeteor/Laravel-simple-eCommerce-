@@ -43,7 +43,7 @@
               </div>
               <div class="col-md-4 col-lg-4 col-xl-3 d-flex produk_data ">
 
-                @if ($item->produk->qty > $item->prod_qty)
+                @if ($item->produk->qty >= $item->prod_qty)
                 <button class="btn btn-link px-2 updatejumlah" id="minusbtn" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                   <i class="fas fa-minus"></i>
                 </button>
