@@ -59,15 +59,22 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @php
+                                    $total=0;
+                                @endphp
                                 @foreach ($keranjang as $item)
                                     <tr>
                                         <td>{{ $item->produk->nama }}</td>
                                         <td>{{ $item->prod_qty }}</td>
                                         <td>Rp. {{ $item->produk->harga_jual }}</td>
                                     </tr>
+                                    @php
+                                        $total += $item->produk->harga_jual*$item->prod_qty;
+                                    @endphp
                                 @endforeach
                             </tbody>
                         </table>
+                        <input type="hidden" name="total" value="{{ $total }}">
                         <hr>
                         <button type="submit" class="btn btn-success">Checkout!</button>
                     </div>

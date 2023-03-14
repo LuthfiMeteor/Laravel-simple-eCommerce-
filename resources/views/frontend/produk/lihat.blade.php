@@ -33,7 +33,7 @@
                                 <i class="bi-cart-fill me-1"></i>
                                 Add to Wishlist
                             </button>
-                            @if ($produk->qty > 1)
+                            @if ($produk->qty >= 1)
                             <button class="btn btn-outline-dark flex-shrink-0 tambahkeranjang" type="button" id="tambahkeranjang">
                                 <i class="bi-cart-fill me-1"></i>
                                 Add to cart
@@ -78,7 +78,12 @@
                         },
                         success:function(response)
                         {
-                            alert(response.status);
+                            swal({title: "Berhasil", 
+                                    text: response.status, 
+                                    type: "success"}).then(function(){ 
+                                location.reload();
+                                }
+                                );
                         }
                         });
 

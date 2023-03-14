@@ -5,9 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\TampilController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Admin\kategoriController;
-use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\FrontController;
+use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\KeranjangController;
 
 
@@ -40,6 +41,9 @@ Route::middleware(['auth'])->group(function () {
     route::get('keranjang', [KeranjangController::class, 'lihatkeranjang']);
     route::get('checkout', [CheckoutController::class, 'index']);
     route::post('place-order', [CheckoutController::class, 'placeorder']);
+
+    route::get('transaksi-saya',[UserController::class, 'index']);
+    route::get('lihat-order/{id}',[UserController::class, 'lihat']);
 });
 
 

@@ -40,11 +40,16 @@
                                                           document.getElementById('logout-form').submit();">
                                               {{ __('Logout') }}
                                           </a>
+                                           <a class="dropdown-item border-top" href="{{ url('transaksi-saya') }}">
+                                            Transaksi Ku
+                                          </a>
+
 
                                           <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                               @csrf
                                           </form>
                                       </div>
+                                      
                                   </li>
                               @endguest                
       </ul>

@@ -28,7 +28,12 @@ class CheckoutController extends Controller
         $order->kota = $req->input('kota');
         $order->provinsi = $req->input('provinsi');
         $order->kode_pos = $req->input('kode_pos');
-        $order->tracking = 'toko'.rand(1111,9999);
+        // KODE UNIK
+        $kode_unik = sprintf("%03d", rand(1, 999));
+        $invoice_number = "INV/" . date('Y/m/d/') . $kode_unik;
+        $order->tracking = $invoice_number;
+        $order->total_harga = $req->input('total');
+
 
         $order->save();
 
@@ -49,7 +54,7 @@ class CheckoutController extends Controller
             $produk->update(); 
         }
         $keranjang = keranjang::where('user_id', Auth::id())->get();
-        keranjang::destroy($keranjang);
+        keranjang::destroy($keranjang);       
         return redirect('/')->with('status', "Order Telah Berhasil");
     }
 }
